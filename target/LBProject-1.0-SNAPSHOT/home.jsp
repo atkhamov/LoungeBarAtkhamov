@@ -59,6 +59,6 @@
         </c:forEach>
     </table>
 </c:if>
-<a href="/LBProject_war_exploded/add-new-client">Add new client</a>
+<a href="/LBProject_war_exploded/add-new-client/">Add new client</a>
 </body>
 </html>

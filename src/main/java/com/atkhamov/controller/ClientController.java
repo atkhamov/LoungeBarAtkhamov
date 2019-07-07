@@ -18,7 +18,7 @@ import java.util.List;
 public class ClientController {
 
     private ClientService clientService = new ClientServiceImpl();
-    private ClientRepository clientRepository = new ClientRepositoryImpl();
+//    private ClientRepository clientRepository = new ClientRepositoryImpl();
 
 //    @RequestMapping(value = "/", method = RequestMethod.GET)
 //    public String getClientPage(Model model){
@@ -57,7 +57,7 @@ public class ClientController {
         client.setFavFood(favFoodIn);
         client.setFavDrink(favDrinkIn);
 
-        clientRepository.addClient(client);
+        clientService.addClientService(client);
         return "redirect:/";
     }
 
