@@ -10,7 +10,7 @@ public class ClientRepositoryImpl implements ClientRepository{
 
     public ClientRepositoryImpl(){
         Client client = new Client();
-        client.setId(1);
+        client.setId(clientDB.size());
         client.setName("NameSample");
         client.setPhone(7717212);
         client.setAddress("Altynsarina 7");
@@ -21,15 +21,15 @@ public class ClientRepositoryImpl implements ClientRepository{
         client.setFavDrink("Vine Bagizagan");
         clientDB.add(client);
         Client client1 = new Client();
-        client.setId(2);
-        client.setName("Johnson");
-        client.setPhone(1002129);
-        client.setAddress("Abay 7");
-        client.setDateOfBirth("21/11/1989");
-        client.setDiscountRate(25);
-        client.setLastOrderSum(7900);
-        client.setFavFood("Besbarmaq");
-        client.setFavDrink("Vine Altynay");
+        client1.setId(clientDB.size());
+        client1.setName("Johnson");
+        client1.setPhone(1002129);
+        client1.setAddress("Abay 7");
+        client1.setDateOfBirth("21/11/1989");
+        client1.setDiscountRate(25);
+        client1.setLastOrderSum(7900);
+        client1.setFavFood("Besbarmaq");
+        client1.setFavDrink("Vine Altynay");
         clientDB.add(client1);
     }
 

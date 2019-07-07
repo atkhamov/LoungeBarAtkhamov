@@ -7,6 +7,7 @@ import com.atkhamov.service.ClientService;
 import com.atkhamov.service.ClientServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -57,6 +58,13 @@ public class ClientController {
         client.setFavDrink(favDrinkIn);
 
         clientRepository.addClient(client);
+        return "redirect:/";
+    }
+
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable Integer id){
+        Client client = clientService.getByID(id);
+        clientService.deleteClient(client);
         return "redirect:/";
     }
 }

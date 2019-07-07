@@ -31,7 +31,7 @@
 <c:if test="${!empty clientList}">
     <table>
         <tr>
-            <th>ID</th>
+
             <th>Name</th>
             <th>PhoneNum</th>
             <th>Address</th>
@@ -40,11 +40,12 @@
             <th>LastOrderSum</th>
             <th>FavoriteFood</th>
             <th>FavoriteDrink</th>
+            <th>Operation</th>
         </tr>
 
         <c:forEach var="home" items="${clientList}">
             <tr>
-                <td>${home.id}</td>
+
                 <td>${home.name}</td>
                 <td>${home.phone}</td>
                 <td>${home.address}</td>
@@ -53,10 +54,11 @@
                 <td>${home.lastOrderSum}</td>
                 <td>${home.favFood}</td>
                 <td>${home.favDrink}</td>
+                <td><a href="/LBProject_war_exploded/delete/${home.id}">Delete</a> </td>
             </tr>
         </c:forEach>
     </table>
 </c:if>
-<a href="/LBProject_war_exploded/add-new-client">Add new client</a>
+<a href="/LBProject_war_exploded/add-new-client/">Add new client</a>
 </body>
 </html>
