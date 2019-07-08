@@ -3,10 +3,11 @@ package com.atkhamov.repository;
 import com.atkhamov.model.Client;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class ClientRepositoryImpl implements ClientRepository{
-    private List<Client> clientDB = new ArrayList<Client>();
+    private List<Client> clientDB = new LinkedList<Client>();
 
     public ClientRepositoryImpl(){
         Client client = new Client();

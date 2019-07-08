@@ -16,6 +16,7 @@ public class ClientServiceImpl implements ClientService {
             if(!clientDB.isEmpty()){
                 Client lastClient = clientDB.get(clientDB.size() - 1);
                 client.setId(lastClient.getId() + 1);
+                //clientDB.add(client);
                 clientRepository.addClient(client);
             }
         }
