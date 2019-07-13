@@ -7,10 +7,7 @@ import com.atkhamov.service.ClientService;
 import com.atkhamov.service.ClientServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +15,8 @@ import java.util.List;
 public class ClientController {
 
     private ClientService clientService = new ClientServiceImpl();
-//    private ClientRepository clientRepository = new ClientRepositoryImpl();
+    private ClientRepository clientRepository = new ClientRepositoryImpl();
+
 
 //    @RequestMapping(value = "/", method = RequestMethod.GET)
 //    public String getClientPage(Model model){
@@ -57,6 +55,8 @@ public class ClientController {
         client.setFavFood(favFoodIn);
         client.setFavDrink(favDrinkIn);
 
+
+//        clientRepository.addClient(client);
         clientService.addClientService(client);
         return "redirect:/";
     }

@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-<form action="/add-new-client" method="POST">
+<form action="/LBProject_war_exploded/add-new-client" method="POST">
     <label>Name</label>
     <input type="text" name="name">
 
@@ -46,7 +46,8 @@
     <label>Favorite Drink</label>
     <input type="text" name="favDrink">
 
-    <a href="/LBProject_war_exploded/">ADD NEW CLIENT</a>
+    <input type="submit" value="Add new client">
+<%--    <a href="/LBProject_war_exploded/create">ADD NEW CLIENT</a>--%>
 </form>
 
 </body>

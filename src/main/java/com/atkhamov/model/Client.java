@@ -1,27 +1,51 @@
 package com.atkhamov.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "clients")
 public class Client {
 
-    private Integer id;
+    @Id
+    @Column(name="client_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer client_id;
+
+    @Column(name="name")
     private String name;
-    private int phone;
+
+    @Column(name="phone")
+    private String phone;
+
+    @Column(name="address")
     private String address;
+
+    @Column(name="dateOfBirth")
     private String dateOfBirth;
+
+    @Column(name="discountRate")
     private int discountRate;
+
+    @Column(name="lastOrderSum")
     private int lastOrderSum;
+
+    @Column(name="favFood")
     private String favFood;
+
+    @Column(name="favDrink")
     private String favDrink;
+
 
     //GettersRegion
     public int getId() {
-        return id;
+        return client_id;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
@@ -52,14 +76,14 @@ public class Client {
 
     //SettersRegion
     public void setId(Integer id) {
-        this.id = id;
+        this.client_id = id;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -85,6 +109,23 @@ public class Client {
 
     public void setFavDrink(String favDrink) {
         this.favDrink = favDrink;
+    }
+    //endOfRegion
+
+    //Method toString to perform Logging
+    @Override
+    public String toString() {
+        return "Client{" +
+                "client_id=" + client_id +
+                ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", discountRate=" + discountRate +
+                ", lastOrderSum=" + lastOrderSum +
+                ", favFood='" + favFood + '\'' +
+                ", favDrink='" + favDrink + '\'' +
+                '}';
     }
     //endOfRegion
 
