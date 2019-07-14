@@ -5,9 +5,9 @@ import com.atkhamov.model.Client;
 import java.util.List;
 
 public interface ClientDAO {
-    public void addClient(Client client);
-    public void updateClient(Client client);
-    public void removeClient(int client_id);
-    public Client getClientByID(int client_id);
-    public List<Client> listClients();
+    void addClient(Client client);
+    void updateClient(Client client);
+    void removeClient(int id);
+    Client getClientByID(int id);
+    List<Client> listClients();
 }

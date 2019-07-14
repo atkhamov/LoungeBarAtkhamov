@@ -9,7 +9,7 @@ public class Client {
     @Id
     @Column(name="client_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer client_id;
+    private int id;
 
     @Column(name="name")
     private String name;
@@ -36,9 +36,8 @@ public class Client {
     private String favDrink;
 
 
-    //GettersRegion
     public int getId() {
-        return client_id;
+        return id;
     }
 
     public String getName() {
@@ -72,11 +71,10 @@ public class Client {
     public String getFavDrink() {
         return favDrink;
     }
-    //endOfRegion
 
-    //SettersRegion
-    public void setId(Integer id) {
-        this.client_id = id;
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setName(String name) {
@@ -110,13 +108,11 @@ public class Client {
     public void setFavDrink(String favDrink) {
         this.favDrink = favDrink;
     }
-    //endOfRegion
 
-    //Method toString to perform Logging
     @Override
     public String toString() {
         return "Client{" +
-                "client_id=" + client_id +
+                "client_id=" + id +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
@@ -127,6 +123,4 @@ public class Client {
                 ", favDrink='" + favDrink + '\'' +
                 '}';
     }
-    //endOfRegion
-
 }

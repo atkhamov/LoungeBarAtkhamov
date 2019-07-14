@@ -1,6 +1,8 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib prefix="spring" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
+<%@ page session="false" %>
 <%--
   Created by IntelliJ IDEA.
   User: Atkhamov
@@ -29,7 +31,7 @@
     </style>
 </head>
 <body>
-    <a href="../../home.jsp">Go to main page</a>
+    <a href="../../index.jsp">Go to main page</a>
     <h1>List of Clients</h1>
     <c:if test="${!empty listClients}">
         <table>
@@ -47,8 +49,8 @@
             </tr>
             <c:forEach items="${listClients}" var="client">
                 <tr>
-                    <td>${client.client_id}</td>
-                    <td><a href="/clientdata/${client_id}" target="_blank"> ${client.name}</a></td>
+                    <td>${client.id}</td>
+                    <td><a href="/clientdata/${client.id}" target="_blank"> ${client.name}</a></td>
                     <td>${client.phone}</td>
                     <td>${client.address}</td>
                     <td>${client.dateOfBirth}</td>
@@ -56,27 +58,26 @@
                     <td>${client.lastOrderSum}</td>
                     <td>${client.favFood}</td>
                     <td>${client.favDrink}</td>
-                    <td><a href="c:url value='/edit/${client.client_id}'>">Edit</a> </td>
-                    <td><a href="c:url value='/remove/${client.client_id}'>">Delete</a> </td>
+                    <td><a href="c:url value='/edit/${client.id}'>">Edit</a> </td>
+                    <td><a href="c:url value='/remove/${client.id}'>">Delete</a> </td>
                 </tr>
             </c:forEach>
 
         </table>
     </c:if>
     <h1>Add new client</h1>
-    <c:url var="addAction" value="/clients/add-new-client">
-    <form:form action="${addAction}" commandName="client">
+    <c:url var="addAction" value="/clients/add"/>
+    <form:form action="${addAction}" modelAttribute="client">
             <table>
                 <c:if test="${!empty client.name}">
                     <tr>
                         <td>
-                            <form:label path="client_id">
+                            <form:label path="id">
                                 <spring:message text="ClientID"/>
                             </form:label>
                         </td>
                         <td>
-                            <form:input path="client_id" readonly="true" size="8" disabled="true"/>
-                            <form:hidden path="client_id"/>
+                            <form:input path="id" readonly="true" size="8" disabled="true"/>
                         </td>
                     </tr>
                 </c:if>
@@ -179,6 +180,6 @@
                     </td>
                 </tr>
             </table>
-    </c:url>
+    </form:form>
 </body>
 </html>

@@ -7,14 +7,14 @@
     <context:component-scan base-package="com.atkhamov"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/"/>
+        <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
     <!--Database configuration region-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/lounge-bar"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/lounge_bar"/>
         <property name="username" value="root"/>
         <property name="password" value="akmal4033277"/>
     </bean>
