@@ -7,16 +7,15 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-@Configuration
-@EnableWebMvc
-@ComponentScan("com.atkhamov")
-public class WebConfig implements WebMvcConfigurer {
-
-    @Bean
-    public InternalResourceViewResolver resolver(){
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
-}
+//@Configuration
+//@EnableWebMvc
+//@ComponentScan("com.atkhamov")
+//public class WebConfig implements WebMvcConfigurer {
+//    @Bean
+//    public InternalResourceViewResolver resolver(){
+//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+//        resolver.setPrefix("/");
+//        resolver.setSuffix(".jsp");
+//        return resolver;
+//    }
+//}

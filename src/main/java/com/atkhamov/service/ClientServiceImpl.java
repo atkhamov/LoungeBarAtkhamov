@@ -2,13 +2,12 @@ package com.atkhamov.service;
 
 import com.atkhamov.dao.ClientDAO;
 import com.atkhamov.model.Client;
-import com.atkhamov.repository.ClientRepository;
-import com.atkhamov.repository.ClientRepositoryImpl;
+//import com.atkhamov.repository.ClientRepository;
+//import com.atkhamov.repository.ClientRepositoryImpl;
 import org.springframework.stereotype.Service;
 
 
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @Service
@@ -39,7 +38,6 @@ public class ClientServiceImpl implements ClientService {
     public Client getClientByID(Integer client_id) {
         return this.clientDAO.getClientByID(client_id);
     }
-
 
     @Transactional
     public List<Client> listClients() {
