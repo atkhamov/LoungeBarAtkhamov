@@ -40,8 +40,8 @@ public class ClientController {
     }
 
     @RequestMapping("/remove/{id}")
-    public String removeClient(@PathVariable("id") int client_id){
-        this.clientService.removeClient(client_id);
+    public String removeClient(@PathVariable("id") int id){
+        this.clientService.removeClient(id);
         return "redirect:/clients";
     }
 
