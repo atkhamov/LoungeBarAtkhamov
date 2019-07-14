@@ -25,7 +25,7 @@ public class ClientRepositoryImpl implements ClientRepository{
         Client client = new Client();
         client.setId(clientDB.size());
         client.setName("NameSample");
-        client.setPhone(7717212);
+        client.setPhone("7717212");
         client.setAddress("Altynsarina 7");
         client.setDateOfBirth("22/07/2000");
         client.setDiscountRate(15);
@@ -36,7 +36,7 @@ public class ClientRepositoryImpl implements ClientRepository{
         Client client1 = new Client();
         client1.setId(clientDB.size());
         client1.setName("Johnson");
-        client1.setPhone(1002129);
+        client1.setPhone("1002129");
         client1.setAddress("Abay 7");
         client1.setDateOfBirth("21/11/1989");
         client1.setDiscountRate(25);
