@@ -46,15 +46,15 @@ public class ClientController {
     }
 
     @RequestMapping("edit/{id}")
-    public String editClient(@PathVariable("id") int client_id, Model model){
-        model.addAttribute("client", this.clientService.getClientByID(client_id));
+    public String editClient(@PathVariable("id") int id, Model model){
+        model.addAttribute("client", this.clientService.getClientByID(id));
         model.addAttribute("listClients", this.clientService.listClients());
         return "clients";
     }
 
     @RequestMapping("clientdata/{id}")
-    public String clientData(@PathVariable("id") int client_id, Model model){
-        model.addAttribute("client", this.clientService.getClientByID(client_id));
+    public String clientData(@PathVariable("id") int id, Model model){
+        model.addAttribute("client", this.clientService.getClientByID(id));
         return "clientdata";
     }
 }

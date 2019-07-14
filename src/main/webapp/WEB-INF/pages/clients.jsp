@@ -31,7 +31,7 @@
     </style>
 </head>
 <body>
-    <a href="../../index.jsp">Go to main page</a>
+    <a href="../LBProject_war_exploded/index.jsp">Go to main page</a>
     <h1>List of Clients</h1>
     <c:if test="${!empty listClients}">
         <table>
@@ -50,7 +50,7 @@
             <c:forEach items="${listClients}" var="client">
                 <tr>
                     <td>${client.id}</td>
-                    <td><a href="/clientdata/${client.id}" target="_blank"> ${client.name}</a></td>
+                    <td><a href="/LBProject_war_exploded/clientdata/${client.id}" target="_blank"> ${client.name}</a></td>
                     <td>${client.phone}</td>
                     <td>${client.address}</td>
                     <td>${client.dateOfBirth}</td>
