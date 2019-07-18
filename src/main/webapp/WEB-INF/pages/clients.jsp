@@ -58,8 +58,8 @@
                     <td>${client.lastOrderSum}</td>
                     <td>${client.favFood}</td>
                     <td>${client.favDrink}</td>
-                    <td><a href="c:url value='/edit/${client.id}'>">Edit</a> </td>
-                    <td><a href="c:url value='/remove/${client.id}'>">Delete</a> </td>
+                    <td><a href="<c:url value='/edit/${client.id}'/>">Edit</a> </td>
+                    <td><a href="<c:url value='/remove/${client.id}'/>">Delete</a> </td>
                 </tr>
             </c:forEach>
 
